@@ -1,0 +1,93 @@
+/* Общие */
+"ok" = "OK";
+"cancel" = "Отмена";
+"save" = "Сохранить";
+"delete" = "Удалить";
+"edit" = "Редактировать";
+"done" = "Готово";
+"add" = "Добавить";
+"create" = "Создать";
+"back" = "Назад";
+"next" = "Далее";
+
+/* Состояния */
+"condition.excellent" = "Отлично";
+"condition.good" = "Норма";
+"condition.fair" = "Удовлетворительно";
+"condition.damaged" = "Повреждено";
+
+/* Главный экран */
+"my_acts" = "Мои акты";
+"no_acts" = "Нет актов";
+"create_first_act" = "Создайте первый акт приёма-передачи";
+"new_act" = "Новый акт";
+
+/* Создание акта */
+"object" = "Объект";
+"name" = "Название";
+"address" = "Адрес";
+"landlord" = "Арендодатель";
+"tenant" = "Арендатор";
+"full_name" = "ФИО";
+"iin" = "ИИН (12 цифр)";
+"phone" = "Телефон";
+"deposit" = "Залог";
+"amount" = "Сумма (₸)";
+
+/* Фазы */
+"move_in" = "Заселение";
+"move_out" = "Выселение";
+"phase_move_in_completed" = "✓ Заселение";
+"phase_move_out_pending" = "Выселение ожидается";
+"phase_comparison_ready" = "Сравнение готово";
+
+/* Осмотр */
+"inspection" = "Осмотр помещения";
+"add_room" = "Добавить комнату";
+"add_element" = "Добавить элемент";
+"room_name" = "Название комнаты";
+"element_name" = "Название элемента";
+"elements" = "элементов";
+
+/* Элементы */
+"condition" = "Состояние";
+"note" = "Заметка";
+"photos" = "Фотографии";
+"take_photo" = "Сделать фото";
+"choose_from_gallery" = "Выбрать из галереи";
+"not_inspected" = "Не осмотрено";
+
+/* Подписи */
+"signatures" = "Подписи";
+"signature_landlord" = "Подпись арендодателя";
+"signature_tenant" = "Подпись арендатора";
+"add_signature" = "Добавить подпись";
+"clear_signature" = "Очистить подпись";
+"sign_with_finger" = "Распишитесь пальцем";
+"signature_not_added" = "Подпись не добавлена";
+
+/* Сравнение */
+"comparison" = "Сравнение";
+"comparison_unavailable" = "Сравнение недоступно. Завершите обе фазы.";
+"deteriorations_found" = "Обнаружены ухудшения";
+"no_deteriorations" = "Ухудшений не обнаружено";
+"deposit_full_refund" = "Залог подлежит возврату в полном объёме";
+"to_deduct_from_deposit" = "К удержанию из залога";
+"deposit_amount" = "Сумма залога";
+"condition_deteriorated" = "Состояние ухудшилось";
+
+/* Экспорт */
+"export_pdf" = "Экспорт PDF";
+"export_comparison" = "Экспорт сравнения (PDF)";
+
+/* Ошибки */
+"error" = "Ошибка";
+"validation_error_name" = "Введите название объекта";
+"validation_error_address" = "Введите адрес объекта";
+"validation_error_landlord_iin" = "ИИН арендодателя должен содержать 12 цифр";
+"validation_error_tenant_iin" = "ИИН арендатора должен содержать 12 цифр";
+
+/* Кнопки действий */
+"complete_move_in" = "Завершить заселение";
+"complete_move_out" = "Завершить выселение";
+"view_comparison" = "Сравнение до/после";

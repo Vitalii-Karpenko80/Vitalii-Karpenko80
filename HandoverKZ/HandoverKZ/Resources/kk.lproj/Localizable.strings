@@ -1,0 +1,93 @@
+/* Жалпы */
+"ok" = "Жарайды";
+"cancel" = "Болдырмау";
+"save" = "Сақтау";
+"delete" = "Жою";
+"edit" = "Өзгерту";
+"done" = "Дайын";
+"add" = "Қосу";
+"create" = "Жасау";
+"back" = "Артқа";
+"next" = "Келесі";
+
+/* Күйлер */
+"condition.excellent" = "Өте жақсы";
+"condition.good" = "Жақсы";
+"condition.fair" = "Қанағаттанарлық";
+"condition.damaged" = "Зақымдалған";
+
+/* Басты экран */
+"my_acts" = "Менің актілерім";
+"no_acts" = "Акті жоқ";
+"create_first_act" = "Бірінші тапсыру-қабылдау актісін жасаңыз";
+"new_act" = "Жаңа акт";
+
+/* Актіні жасау */
+"object" = "Нысан";
+"name" = "Атауы";
+"address" = "Мекенжайы";
+"landlord" = "Жалға беруші";
+"tenant" = "Жалға алушы";
+"full_name" = "Аты-жөні";
+"iin" = "ЖСН (12 сан)";
+"phone" = "Телефон";
+"deposit" = "Кепілдік";
+"amount" = "Сомасы (₸)";
+
+/* Кезеңдер */
+"move_in" = "Қоныстану";
+"move_out" = "Шығу";
+"phase_move_in_completed" = "✓ Қоныстану";
+"phase_move_out_pending" = "Шығу күтілуде";
+"phase_comparison_ready" = "Салыстыру дайын";
+
+/* Тексеру */
+"inspection" = "Үй-жайды тексеру";
+"add_room" = "Бөлме қосу";
+"add_element" = "Элемент қосу";
+"room_name" = "Бөлме атауы";
+"element_name" = "Элемент атауы";
+"elements" = "элементтер";
+
+/* Элементтер */
+"condition" = "Жағдайы";
+"note" = "Ескерту";
+"photos" = "Суреттер";
+"take_photo" = "Сурет түсіру";
+"choose_from_gallery" = "Галереядан таңдау";
+"not_inspected" = "Тексерілмеген";
+
+/* Қолтаңбалар */
+"signatures" = "Қолтаңбалар";
+"signature_landlord" = "Жалға берушінің қолтаңбасы";
+"signature_tenant" = "Жалға алушының қолтаңбасы";
+"add_signature" = "Қолтаңба қосу";
+"clear_signature" = "Қолтаңбаны өшіру";
+"sign_with_finger" = "Саусақпен қол қойыңыз";
+"signature_not_added" = "Қолтаңба қосылмаған";
+
+/* Салыстыру */
+"comparison" = "Салыстыру";
+"comparison_unavailable" = "Салыстыру қолжетімсіз. Екі кезеңді де аяқтаңыз.";
+"deteriorations_found" = "Нашарлаулар табылды";
+"no_deteriorations" = "Нашарлаулар табылмады";
+"deposit_full_refund" = "Кепілдік толық қайтарылуға жатады";
+"to_deduct_from_deposit" = "Кепілдіктен ұстауға";
+"deposit_amount" = "Кепілдік сомасы";
+"condition_deteriorated" = "Жағдайы нашарлады";
+
+/* Экспорт */
+"export_pdf" = "PDF экспорты";
+"export_comparison" = "Салыстыруды экспорттау (PDF)";
+
+/* Қателер */
+"error" = "Қате";
+"validation_error_name" = "Нысан атауын енгізіңіз";
+"validation_error_address" = "Нысан мекенжайын енгізіңіз";
+"validation_error_landlord_iin" = "Жалға берушінің ЖСН 12 саннан тұруы керек";
+"validation_error_tenant_iin" = "Жалға алушының ЖСН 12 саннан тұруы керек";
+
+/* Әрекет батырмалары */
+"complete_move_in" = "Қоныстануды аяқтау";
+"complete_move_out" = "Шығуды аяқтау";
+"view_comparison" = "Дейін/кейін салыстыру";
