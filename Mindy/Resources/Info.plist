@@ -5,7 +5,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>ru</string>
     <key>CFBundleDisplayName</key>
-    <string>Voice Pocket</string>
+    <string>Mindy</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -49,12 +49,12 @@
         <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
     <key>NSMicrophoneUsageDescription</key>
-    <string>Voice Pocket использует микрофон для записи ваших голосовых заметок и их преобразования в текст</string>
+    <string>Mindy использует микрофон для записи ваших голосовых заметок и их преобразования в текст</string>
     <key>NSSpeechRecognitionUsageDescription</key>
-    <string>Voice Pocket использует распознавание речи для преобразования ваших голосовых мыслей в структурированные задачи</string>
+    <string>Mindy использует распознавание речи для преобразования ваших голосовых мыслей в структурированные задачи</string>
     <key>NSRemindersUsageDescription</key>
-    <string>Voice Pocket создаёт напоминания из ваших голосовых заметок для удобного управления задачами</string>
+    <string>Mindy создаёт напоминания из ваших голосовых заметок для удобного управления задачами</string>
     <key>NSCalendarsUsageDescription</key>
-    <string>Voice Pocket может добавлять события в календарь на основе ваших голосовых заметок</string>
+    <string>Mindy может добавлять события в календарь на основе ваших голосовых заметок</string>
 </dict>
 </plist>

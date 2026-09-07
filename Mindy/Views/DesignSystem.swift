@@ -1,6 +1,6 @@
 //
 //  DesignSystem.swift
-//  VoicePocket
+//  Mindy
 //
 //  Дизайн-система в стиле iOS 2026
 //

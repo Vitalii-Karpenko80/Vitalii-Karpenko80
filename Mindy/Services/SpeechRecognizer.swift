@@ -1,6 +1,6 @@
 //
 //  SpeechRecognizer.swift
-//  VoicePocket
+//  Mindy
 //
 //  Сервис для распознавания речи
 //

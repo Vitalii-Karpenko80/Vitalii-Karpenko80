@@ -1,4 +1,4 @@
-# TODO List — Voice Pocket
+# TODO List — Mindy
 
 ## ✅ Завершено (v1.0 — iOS 2026 Design)
 

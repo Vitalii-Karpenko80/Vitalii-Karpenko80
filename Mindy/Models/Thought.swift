@@ -1,6 +1,6 @@
 //
 //  Thought.swift
-//  VoicePocket
+//  Mindy
 //
 //  Модель для хранения распознанной мысли
 //

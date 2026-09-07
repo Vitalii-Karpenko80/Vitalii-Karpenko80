@@ -1,6 +1,6 @@
 //
-//  VoicePocketWidget.swift
-//  VoicePocket Widget Extension
+//  MindyWidget.swift
+//  Mindy Widget Extension
 //
 //  Lock Screen Widget для быстрого доступа (iOS 2026)
 //
@@ -9,8 +9,8 @@ import WidgetKit
 import SwiftUI
 import AppIntents
 
-struct VoicePocketWidget: Widget {
-    let kind: String = "VoicePocketWidget"
+struct MindyWidget: Widget {
+    let kind: String = "MindyWidget"
     
     var body: some WidgetConfiguration {
         AppIntentConfiguration(
@@ -18,11 +18,11 @@ struct VoicePocketWidget: Widget {
             intent: RecordThoughtIntent.self,
             provider: Provider()
         ) { entry in
-            VoicePocketWidgetEntryView(entry: entry)
+            MindyWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationDisplayName("Voice Pocket")
-        .description("Быстрая запись мыслей")
+        .configurationDisplayName("Mindy")
+        .description("Your AI thought companion")
         .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
 }
@@ -46,7 +46,7 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
 }
 
-struct VoicePocketWidgetEntryView: View {
+struct MindyWidgetEntryView: View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var family
     
@@ -66,7 +66,7 @@ struct VoicePocketWidgetEntryView: View {
     private var circularView: some View {
         ZStack {
             AccessoryWidgetBackground()
-            Image(systemName: "mic.fill")
+            Image(systemName: "brain.head.profile")
                 .font(.title)
                 .foregroundStyle(
                     LinearGradient(
@@ -80,7 +80,7 @@ struct VoicePocketWidgetEntryView: View {
     
     private var rectangularView: some View {
         HStack(spacing: 12) {
-            Image(systemName: "waveform.circle.fill")
+            Image(systemName: "brain.head.profile")
                 .font(.title2)
                 .foregroundStyle(
                     LinearGradient(
@@ -90,9 +90,9 @@ struct VoicePocketWidgetEntryView: View {
                     )
                 )
             VStack(alignment: .leading, spacing: 2) {
-                Text("Voice Pocket")
+                Text("Mindy")
                     .font(.headline)
-                Text("Записать мысль")
+                Text("Capture thoughts")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }
@@ -103,15 +103,15 @@ struct VoicePocketWidgetEntryView: View {
     
     private var inlineView: some View {
         HStack {
-            Image(systemName: "mic.fill")
-            Text("Записать мысль")
+            Image(systemName: "brain.head.profile")
+            Text("Capture thought")
         }
     }
 }
 
 struct RecordThoughtIntent: AppIntent, WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Записать мысль"
-    static var description = IntentDescription("Открыть Voice Pocket для записи голосовой заметки")
+    static var description = IntentDescription("Открыть Mindy для записи голосовой заметки")
     
     func perform() async throws -> some IntentResult {
         return .result()

@@ -1,354 +1,330 @@
-# Voice Pocket 🎤  
-### Голосовой «входящий ящик» для мыслей  
-*iOS 2026 Design Language Edition*
+# Mindy 🧠  
+### Your AI Thought Companion  
+*iOS 2026 Design Language Edition with GPT-4*
 
-> Современное iOS приложение с **Liquid Glass UI**, **springy animations** и **AI-powered парсингом** задач из речи
+> Голосовой AI-помощник с **Liquid Glass UI**, **springy animations** и **GPT-4 powered** парсингом задач
 
 ![iOS](https://img.shields.io/badge/iOS-17.0+-blue.svg)
 ![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)
 ![Design](https://img.shields.io/badge/Design-iOS%202026-purple.svg)
+![AI](https://img.shields.io/badge/AI-GPT--4-green.svg)
 
 ---
 
-## ✨ Особенности
+## 💡 Что такое Mindy?
 
-### 🎯 Функциональность
-- **Мгновенная запись**: Одна кнопка на Lock Screen или Action Button
-- **Гибридный парсинг**: Локальный парсер + опциональный GPT-4
-- **GPT-4 интеграция**: Улучшенное извлечение задач, дат и контекста
-- **Интеграция с Reminders**: Задачи автоматически сохраняются в системные напоминания
-- **Поддержка русского языка**: Распознавание речи настроено на русский
-- **Lock Screen Widget**: Быстрый доступ прямо с экрана блокировки
-- **Приоритеты и типы**: Автоматическое определение приоритета и категории задачи
+**Mindy** — это ваш персональный разум-помощник, который никогда не забывает. Просто скажите, что у вас на уме, и Mindy:
 
-### 🎨 Дизайн iOS 2026
+- 🎯 **Извлечёт задачу** из вашей речи
+- 📅 **Распознает дату и время** в любом формате  
+- 🎨 **Определит приоритет** автоматически
+- 🏷️ **Категоризирует** по типу действия
+- ✅ **Создаст напоминание** в системе
 
-#### Liquid Glass UI
-Самый актуальный тренд от Apple — адаптивная материальная система с эффектами преломления света:
-- **Glassmorphism cards** с размытием и прозрачностью
-- **Soft depth shadows** для тактильности
-- **Border shimmer** эффекты
-- **Dynamic blur** в зависимости от контента
+**Всё это — одним нажатием кнопки.**
 
-#### Springy Animations
-Физически основанные анимации с spring physics:
-- **Natural motion** при переходах
-- **Bounce effects** для интерактивных элементов
-- **Scale transformations** при нажатиях
-- **Haptic feedback** синхронизированный с анимациями
+---
 
-#### Modern Color System
-Продуманная цветовая палитра 2026:
-- **Cyber Blue** (`#66CCFF`) — основной акцент
-- **Purple** (`#CC66FF`) — вторичный акцент
-- **Pink** (`#FF80B3`) — третичный акцент
-- **Liquid Background** — глубокий градиент
-- **Animated gradients** — плавно меняющиеся фоны
+## ✨ Почему Mindy?
 
-#### Typography & Spacing
-San Francisco Rounded с улучшенным spacing:
-- **Display font** для заголовков (48pt, bold)
-- **Title fonts** (32pt / 24pt, semibold)
-- **Body font** (17pt, regular)
-- **Generous line spacing** (4-6pt)
-- **Consistent padding** (20-24pt)
+### 🧠 Понимает контекст
+```
+Вы говорите: "К пятнице обязательно закончить отчёт о Q3 
+продажах, это критично для встречи с инвесторами"
 
-#### Micro-interactions
-Продуманные детали взаимодействия:
-- **Pulsing effects** при записи
-- **Symbol effects** SF Symbols
-- **Smooth transitions** между состояниями
-- **Interactive feedback** на каждое действие
+Mindy распознает:
+✓ Задача: "закончить отчёт"
+✓ Тема: "Q3 продажах"  
+✓ Когда: Пятница этой недели
+✓ Контекст: "критично для встречи с инвесторами"
+✓ Приоритет: high 🔴
+✓ Тип: task
+```
+
+### ⚡ Гибридная обработка
+
+**Двухуровневая система:**
+1. **Локальный парсер** — мгновенно, бесплатно, offline
+2. **GPT-4 парсер** — умно, точно, понимает нюансы
+
+### 🎨 Современный дизайн iOS 2026
+
+- **Liquid Glass UI** — эффекты преломления света
+- **Springy animations** — физически правильные анимации
+- **Cyber Blue/Purple** палитра — яркие акценты
+- **Micro-interactions** — haptic feedback на каждое действие
+
+---
+
+## 🚀 Основные возможности
+
+### Голосовой ввод
+- 🎤 Распознавание речи на русском языке
+- 🔴 Live transcription с визуализацией
+- 📝 Автоматическое сохранение в текст
+
+### Умный парсинг (GPT-4)
+- 🎯 Извлечение задач из речи
+- 📅 Любые форматы дат ("завтра", "к пятнице", "через неделю")
+- 🔴🟡🟢 Автоматические приоритеты (high/medium/low)
+- 📞👥🛒🔔📝✅ Категоризация по типу
+
+### Интеграции
+- ✅ **Apple Reminders** — автоматическое создание задач
+- 📅 **Calendar** — события с датой и временем
+- 🔒 **Lock Screen Widget** — быстрый доступ
+- ⚡ **Action Button** — мгновенная запись (iPhone 15 Pro)
+- 🎙️ **Siri Shortcuts** — голосовые команды
+
+### UI/UX
+- 🎨 **Dark Mode 2.0** — красивый тёмный интерфейс
+- ✨ **Liquid Glass cards** — полупрозрачные карточки
+- 🎭 **Type icons** — 📞 call / 👥 meeting / 🛒 purchase
+- 🎯 **Priority badges** — 🔴 high / 🟡 medium / 🟢 low
+- 🧠 **GPT-4 indicator** — видно когда используется AI
 
 ---
 
 ## 📋 Требования
 
-- **iOS 17.0** или новее
-- **iPhone** с поддержкой Speech Recognition
+- **iOS 17.0+**
+- **iPhone** с Speech Recognition
 - **Xcode 15.0+** для разработки
-- Доступ к микрофону, распознаванию речи и напоминаниям
+- **OpenAI API key** (опционально, для GPT-4)
 
 ---
 
-## 🚀 Установка
+## 🎯 Быстрый старт
 
-### 1. Клонирование репозитория
-
+### 1. Клонируйте репозиторий
 ```bash
-git clone https://github.com/Vitalii-Karpenko80/voice-pocket.git
-cd voice-pocket
+git clone https://github.com/Vitalii-Karpenko80/mindy.git
+cd mindy
 ```
 
-### 2. Открытие в Xcode
-
+### 2. Откройте в Xcode
 ```bash
-open VoicePocket.xcodeproj
+open Mindy.xcodeproj
 ```
 
-Или используйте Swift Package Manager:
+### 3. Настройте Bundle ID
+- Выберите ваш Team
+- Измените Bundle Identifier
 
-```bash
-swift build
+### 4. Запустите
+```
+Cmd + R
 ```
 
-### 3. Настройка Bundle Identifier
-
-1. Откройте проект в Xcode
-2. Выберите target `VoicePocket`
-3. В разделе **Signing & Capabilities** укажите свой Team
-4. Измените Bundle Identifier на уникальный
-
-### 4. Разрешения
-
-Приложение запросит следующие разрешения при первом запуске:
-- ✅ **Микрофон**: Для записи голоса
-- ✅ **Распознавание речи**: Для преобразования речи в текст
-- ✅ **Напоминания**: Для создания задач
-- ✅ **Календарь**: Для добавления событий (опционально)
+### 5. (Опционально) Настройте GPT-4
+1. Откройте **Настройки** ⚙️
+2. Включите **"Использовать GPT-4"**
+3. Добавьте API key с [platform.openai.com](https://platform.openai.com)
 
 ---
 
-## 💡 Использование
+## 🧠 GPT-4 Интеграция
 
-### Базовый режим
+### Как это работает?
 
-1. Откройте приложение
-2. Нажмите большую круглую кнопку с микрофоном
-3. Произнесите свою мысль:
-   
-   > "Завтра позвонить Сергею насчёт дверей, он обещал цену до 12 часов"
+Mindy использует **гибридный подход**:
 
-4. Нажмите "Сохранить"
-
-**Результат:**
-```
-✓ Задача: "позвонить Сергею"
-✓ Тема: "дверей"  
-✓ Когда: Завтра, 12:00
-✓ Контекст: "он обещал цену до 12 часов"
-✓ Приоритет: high 🔴
-✓ Тип: call 📞
+```swift
+if useGPT4 && apiKeyConfigured {
+    // Пробуем GPT-4 для максимальной точности
+    result = await gpt4Service.parse(text)
+} else {
+    // Fallback на локальный парсер
+    result = localParser.parse(text)
+}
 ```
 
-### Lock Screen Widget
+### Что умеет GPT-4?
 
-1. Долгое нажатие на Lock Screen
-2. Нажмите "Customize"
-3. Добавьте Voice Pocket widget
-4. Теперь можно записывать мысли прямо с экрана блокировки!
+| Возможность | Локальный | GPT-4 |
+|------------|-----------|-------|
+| Задачи | ✅ Ключевые слова | ✅ Контекст |
+| Даты | ⚠️ Стандартные | ✅ Любые |
+| Приоритет | ❌ | ✅ Автоматически |
+| Тип | ❌ | ✅ Категоризация |
+| Контекст | ⚠️ Частичный | ✅ Полный |
 
-### Action Button (iPhone 15 Pro/Pro Max)
+### Стоимость
 
-1. Откройте **Настройки → Action Button**
-2. Выберите **Shortcut**
-3. Выберите "Быстрая запись мысли"
-4. Готово! Action Button мгновенно открывает Voice Pocket
+- **Локальный парсер**: 💰 Бесплатно
+- **GPT-4o**: ~$0.005 за запрос (~$5 за 1000 задач)
 
-### Siri Shortcuts
+**100 задач в месяц**: ~$0.50
 
-Скажите Siri:
-- "Записать мысль в Voice Pocket"
-- "Открыть Voice Pocket"
-- "Новая заметка в Voice Pocket"
+📖 Подробный гайд: [GPT4_GUIDE.md](GPT4_GUIDE.md)
+
+---
+
+## 💡 Примеры использования
+
+### Простые задачи
+```
+"Завтра позвонить Сергею"
+→ 📞 call | 🟡 medium | Завтра 09:00
+```
+
+### Покупки
+```
+"Купить молоко и хлеб сегодня"
+→ 🛒 purchase | 🟢 low | Сегодня
+```
+
+### Встречи
+```
+"Через три дня встретиться с клиентом в районе полудня"
+→ 👥 meeting | 🟡 medium | Через 3 дня, 12:00
+```
+
+### Сложные задачи
+```
+"К пятнице обязательно закончить отчёт, это критично"
+→ ✅ task | 🔴 high | Пятница | "критично"
+```
 
 ---
 
 ## 🏗 Архитектура
 
 ```
-VoicePocket/
-├── VoicePocketApp.swift          # Entry point приложения
+Mindy/
+├── MindyApp.swift              # Entry point
 │
 ├── Models/
-│   └── Thought.swift             # Модель мысли/задачи
+│   └── Thought.swift           # Модель с priority, taskType
 │
 ├── Services/
-│   ├── SpeechRecognizer.swift    # Speech Recognition API
-│   ├── ThoughtParser.swift       # Локальный парсер
-│   ├── GPT4ParsingService.swift  # 🧠 GPT-4 парсер
-│   └── ThoughtManager.swift      # Менеджер данных + EventKit
+│   ├── SpeechRecognizer.swift  # Apple Speech API
+│   ├── ThoughtParser.swift     # Локальный парсер
+│   ├── GPT4ParsingService.swift # 🧠 GPT-4 интеграция
+│   └── ThoughtManager.swift    # Гибридная логика
 │
 ├── Views/
-│   ├── ContentView.swift         # Главный экран
-│   ├── SettingsView.swift        # ⚙️ Настройки и API ключ
-│   └── DesignSystem.swift        # Дизайн-система iOS 2026
+│   ├── ContentView.swift       # Главный экран
+│   ├── SettingsView.swift      # ⚙️ Настройки + API key
+│   └── DesignSystem.swift      # iOS 2026 компоненты
 │
-├── VoicePocketWidget.swift       # Lock Screen Widget
-├── QuickRecordIntent.swift       # App Intents
-├── PreviewHelper.swift           # Preview helpers
-│
-└── Resources/
-    └── Info.plist                # Разрешения и конфигурация
+├── MindyWidget.swift           # Lock Screen Widget
+└── QuickRecordIntent.swift     # App Intents для Shortcuts
 ```
+
+**13 Swift файлов** | **~4000 строк кода**
 
 ---
 
-## 🎨 Дизайн-система
+## 🎨 Дизайн-система iOS 2026
 
-### Компоненты
+### Liquid Glass Components
 
-#### LiquidGlassCard
 ```swift
-.liquidGlassCard(
-    tintColor: .glassTint,
-    cornerRadius: 24
-)
-```
+// Glass card с размытием
+.liquidGlassCard(tintColor: .glassTint, cornerRadius: 24)
 
-#### SpringyButton
-```swift
+// Springy button с физикой
 .springyButton(scale: 0.95)
-```
 
-#### SoftDepthShadow
-```swift
-.softDepthShadow(
-    color: .accentPrimary,
-    radius: 30
-)
-```
+// Soft depth shadow
+.softDepthShadow(color: .accentPrimary, radius: 30)
 
-#### PulsingEffect
-```swift
+// Pulsing effect
 .pulsing(color: .accentPrimary)
-```
 
-#### AnimatedGradientBackground
-```swift
+// Animated gradient background
 AnimatedGradientBackground()
 ```
 
-### Цвета
+### Color Palette
 
 ```swift
-Color.accentPrimary        // Cyber Blue #66CCFF
-Color.accentSecondary      // Purple #CC66FF
-Color.accentTertiary       // Pink #FF80B3
-Color.liquidBackground     // Deep Dark #0D0D1F
-Color.glassTint            // White 5% opacity
-Color.glassBorder          // White 15% opacity
-Color.textPrimary          // White 100%
-Color.textSecondary        // White 70%
-Color.textTertiary         // White 40%
+Cyber Blue   #66CCFF  // Основной акцент
+Purple       #CC66FF  // Вторичный акцент
+Pink         #FF80B3  // Третичный акцент
+Deep Dark    #0D0D1F  // Фон
 ```
 
-### Типографика
+### Typography
 
-```swift
-Font.display(48)           // Bold Rounded
-Font.title1(32)            // Semibold Rounded
-Font.title2(24)            // Semibold Rounded
-Font.body(17)              // Regular Rounded
-Font.caption(13)           // Medium Rounded
-```
+- **Display** (48pt) — San Francisco Rounded Bold
+- **Title** (32pt/24pt) — SF Rounded Semibold
+- **Body** (17pt) — SF Rounded Regular
+- **Caption** (13pt) — SF Rounded Medium
+
+---
+
+## 🎯 Использование
+
+### Lock Screen Widget
+1. Долгое нажатие на Lock Screen
+2. **Customize** → Добавьте Mindy
+3. Теперь можно записывать с экрана блокировки!
+
+### Action Button (iPhone 15 Pro)
+1. **Настройки → Action Button → Shortcut**
+2. Выберите "Записать мысль"
+3. Action Button открывает Mindy мгновенно!
+
+### Siri
+Скажите:
+- "Hey Siri, open Mindy"
+- "Записать мысль в Mindy"
+- "Новая заметка в Mindy"
 
 ---
 
 ## 🧩 Технологии
 
-- **SwiftUI** — Декларативный UI фреймворк
+- **SwiftUI** — Декларативный UI
 - **Speech Framework** — Распознавание речи
-- **OpenAI GPT-4o** — Умный парсинг задач
-- **AVFoundation** — Работа с аудио
-- **EventKit** — Интеграция с Reminders и Calendar
+- **OpenAI GPT-4o** — Умный парсинг
+- **AVFoundation** — Аудио обработка
+- **EventKit** — Reminders & Calendar
 - **WidgetKit** — Lock Screen Widgets
-- **App Intents** — Action Button и Shortcuts
-- **NaturalLanguage** — Обработка естественного языка
-
----
-
-## 🎯 Примеры использования
-
-### Пример 1: Звонок
-```
-Пользователь: "Завтра в 9 утра встретиться с Машей насчёт проекта"
-
-Voice Pocket распознает:
-├─ Задача: "встретиться с Машей"
-├─ Тема: "проекта"
-├─ Когда: Завтра, 09:00
-└─ Контекст: —
-```
-
-### Пример 2: Покупки
-```
-Пользователь: "Купить молоко и хлеб сегодня, не забыть"
-
-Voice Pocket распознает:
-├─ Задача: "Купить молоко и хлеб"
-├─ Когда: Сегодня
-└─ Контекст: "не забыть"
-```
-
-### Пример 3: Отчёт
-```
-Пользователь: "Послезавтра написать отчёт о продажах, срочно, дедлайн до конца недели"
-
-Voice Pocket распознает:
-├─ Задача: "написать отчёт"
-├─ Тема: "продажах"
-├─ Когда: Послезавтра
-└─ Контекст: "срочно, дедлайн до конца недели"
-```
+- **App Intents** — Action Button & Siri
+- **NaturalLanguage** — Локальный NLP
 
 ---
 
 ## 🎯 Roadmap
 
 ### v1.1
-- [ ] Поддержка английского языка
-- [ ] Улучшенный парсинг с GPT-4
+- [ ] Английский язык
+- [ ] Apple Watch app
 - [ ] iCloud синхронизация
 - [ ] История редактирования
 
 ### v1.2
-- [ ] Apple Watch приложение
 - [ ] macOS версия
 - [ ] Теги и категории
 - [ ] Поиск и фильтры
+- [ ] Статистика
 
 ### v1.3
-- [ ] Экспорт в Notion, Todoist, Things
+- [ ] Экспорт (Notion, Todoist, Things)
 - [ ] Повторяющиеся задачи
 - [ ] Геолокация для напоминаний
-- [ ] Статистика и аналитика
-
----
-
-## 🐛 Известные проблемы
-
-- Парсинг времени работает только для форматов "до/в/к HH:MM"
-- Нет поддержки повторяющихся задач
-- Контекст извлекается только по ключевым словам
-- Симулятор не поддерживает Speech Recognition (только реальное устройство)
+- [ ] Collaborative списки
 
 ---
 
 ## 🤝 Вклад
 
-Contributions приветствуются! 
+Contributions приветствуются!
 
 1. Fork репозитория
-2. Создайте feature branch  
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. Commit изменения  
-   ```bash
-   git commit -m 'Add amazing feature'
-   ```
-4. Push в branch  
-   ```bash
-   git push origin feature/amazing-feature
-   ```
+2. Создайте branch (`git checkout -b feature/amazing`)
+3. Commit (`git commit -m 'Add amazing feature'`)
+4. Push (`git push origin feature/amazing`)
 5. Откройте Pull Request
 
 ---
 
 ## 📄 Лицензия
 
-MIT License — см. файл [LICENSE](LICENSE)
+MIT License — см. [LICENSE](LICENSE)
 
 ---
 
@@ -361,16 +337,24 @@ MIT License — см. файл [LICENSE](LICENSE)
 
 ## 🙏 Благодарности
 
-- Apple за вдохновляющие фреймворки Speech и EventKit
-- iOS дизайн-сообществу за тренды 2026
-- Всем контрибьюторам проекта
+- **Apple** за Speech и EventKit
+- **OpenAI** за GPT-4
+- **iOS дизайн-сообщество** за тренды 2026
 
 ---
 
 ## 📸 Скриншоты
 
-_Скриншоты будут добавлены после тестирования на устройстве_
+_Скриншоты будут добавлены после тестирования_
 
 ---
 
-**Сделано с ❤️ для продуктивности | iOS 2026 Design Language**
+<div align="center">
+
+**Сделано с 🧠 и ❤️**
+
+**Mindy — Your AI Thought Companion**
+
+*Think out loud. Mindy remembers.*
+
+</div>

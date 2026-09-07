@@ -1,6 +1,6 @@
 //
 //  SettingsView.swift
-//  VoicePocket
+//  Mindy
 //
 //  Экран настроек приложения
 //
@@ -209,7 +209,7 @@ struct SettingsView: View {
     
     private var aboutSection: some View {
         VStack(spacing: 12) {
-            Text("Voice Pocket v1.0")
+            Text("Mindy v1.0")
                 .font(.body())
                 .foregroundColor(.textSecondary)
             

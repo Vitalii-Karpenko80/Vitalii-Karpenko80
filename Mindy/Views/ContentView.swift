@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  VoicePocket
+//  Mindy
 //
 //  Главный экран приложения (Дизайн iOS 2026)
 //
@@ -34,7 +34,7 @@ struct ContentView: View {
                         .padding(.bottom, 50)
                 }
             }
-            .navigationTitle("Voice Pocket")
+            .navigationTitle("Mindy")
             .navigationBarTitleDisplayMode(.large)
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar {

@@ -1,6 +1,6 @@
 //
 //  PreviewHelper.swift
-//  VoicePocket
+//  Mindy
 //
 //  Хелпер для SwiftUI Preview
 //

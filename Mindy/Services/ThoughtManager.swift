@@ -1,6 +1,6 @@
 //
 //  ThoughtManager.swift
-//  VoicePocket
+//  Mindy
 //
 //  Менеджер для управления мыслями и интеграции с системными API
 //

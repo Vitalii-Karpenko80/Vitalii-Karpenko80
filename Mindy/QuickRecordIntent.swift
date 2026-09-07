@@ -1,6 +1,6 @@
 //
 //  QuickRecordIntent.swift
-//  VoicePocket
+//  Mindy
 //
 //  App Intent для Action Button и Shortcuts
 //
@@ -19,7 +19,7 @@ struct QuickRecordIntent: AppIntent {
     }
 }
 
-struct VoicePocketShortcuts: AppShortcutsProvider {
+struct MindyShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: QuickRecordIntent(),

@@ -4,26 +4,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "VoicePocket",
+    name: "Mindy",
     defaultLocalization: "ru",
     platforms: [
         .iOS(.v17)
     ],
     products: [
         .library(
-            name: "VoicePocket",
-            targets: ["VoicePocket"])
+            name: "Mindy",
+            targets: ["Mindy"])
     ],
     dependencies: [
         .package(url: "https://github.com/MacPaw/OpenAI.git", from: "0.2.9")
     ],
     targets: [
         .target(
-            name: "VoicePocket",
+            name: "Mindy",
             dependencies: [
                 .product(name: "OpenAI", package: "OpenAI")
             ],
-            path: "VoicePocket"
+            path: "Mindy"
         )
     ]
 )

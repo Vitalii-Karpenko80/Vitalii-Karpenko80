@@ -1,6 +1,6 @@
 //
 //  GPT4ParsingService.swift
-//  VoicePocket
+//  Mindy
 //
 //  Сервис для парсинга задач через GPT-4
 //
