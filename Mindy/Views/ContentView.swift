@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @State private var showingTranscription = false
     @State private var showingSettings = false
+    @State private var showingExport = false
     @State private var buttonScale: CGFloat = 1.0
     
     var body: some View {
@@ -38,6 +39,22 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.large)
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showingExport = true
+                    }) {
+                        Image(systemName: "square.and.arrow.up")
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [.accentPrimary, .accentSecondary],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                    }
+                    .springyButton()
+                }
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         showingSettings = true
@@ -78,6 +95,10 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
+                    .environmentObject(thoughtManager)
+            }
+            .sheet(isPresented: $showingExport) {
+                ExportView()
                     .environmentObject(thoughtManager)
             }
         }
