@@ -13,25 +13,73 @@ import Combine
 class ThoughtManager: ObservableObject {
     @Published var thoughts: [Thought] = []
     @Published var errorMessage: String?
+    @Published var isProcessing = false
     
     private let parser = ThoughtParser()
+    private let gpt4Service = GPT4ParsingService()
     private let eventStore = EKEventStore()
     private let userDefaults = UserDefaults.standard
     private let thoughtsKey = "saved_thoughts"
+    private let useGPT4Key = "use_gpt4_parsing"
+    
+    var useGPT4: Bool {
+        get {
+            userDefaults.bool(forKey: useGPT4Key)
+        }
+        set {
+            userDefaults.set(newValue, forKey: useGPT4Key)
+        }
+    }
     
     init() {
         loadThoughts()
         requestCalendarAccess()
     }
     
-    func addThought(_ text: String) {
-        let thought = parser.parse(text)
+    func addThought(_ text: String) async {
+        isProcessing = true
+        
+        var thought: Thought
+        
+        // Гибридный подход: GPT-4 если включён и настроен, иначе локальный
+        if useGPT4 && gpt4Service.isConfigured {
+            do {
+                let parsed = try await gpt4Service.parseThought(text)
+                thought = Thought(
+                    originalText: text,
+                    task: parsed.task,
+                    subject: parsed.subject,
+                    when: parsed.when,
+                    context: parsed.context,
+                    priority: parsed.priority?.rawValue,
+                    taskType: parsed.type?.rawValue,
+                    isProcessed: true
+                )
+                print("✅ Использован GPT-4 парсинг")
+            } catch {
+                // Fallback на локальный парсер
+                thought = parser.parse(text)
+                errorMessage = "GPT-4 недоступен, использован локальный парсер"
+                print("⚠️ Fallback на локальный парсер: \(error.localizedDescription)")
+            }
+        } else {
+            // Локальный парсер
+            thought = parser.parse(text)
+            print("✅ Использован локальный парсер")
+        }
+        
         thoughts.insert(thought, at: 0)
         saveThoughts()
         
         if let task = thought.task {
             createReminder(title: task, dueDate: thought.when, notes: thought.context)
         }
+        
+        isProcessing = false
+    }
+    
+    func getGPT4Service() -> GPT4ParsingService {
+        return gpt4Service
     }
     
     func deleteThought(_ thought: Thought) {

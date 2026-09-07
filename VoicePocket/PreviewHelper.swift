@@ -14,6 +14,8 @@ extension Thought {
         subject: "дверей",
         when: Calendar.current.date(byAdding: .day, value: 1, to: Date()),
         context: "он обещал цену до 12 часов",
+        priority: "high",
+        taskType: "call",
         isProcessed: true
     )
     
@@ -23,6 +25,8 @@ extension Thought {
         subject: nil,
         when: Date(),
         context: nil,
+        priority: "low",
+        taskType: "purchase",
         isProcessed: true
     )
     
@@ -32,6 +36,8 @@ extension Thought {
         subject: "продажах",
         when: Calendar.current.date(byAdding: .day, value: 2, to: Date()),
         context: "срочно",
+        priority: "medium",
+        taskType: "task",
         isProcessed: true
     )
 }
@@ -47,4 +53,9 @@ extension Thought {
     
     return ContentView()
         .environmentObject(manager)
+}
+
+#Preview("Settings") {
+    SettingsView()
+        .environmentObject(ThoughtManager())
 }

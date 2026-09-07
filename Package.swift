@@ -14,11 +14,15 @@ let package = Package(
             name: "VoicePocket",
             targets: ["VoicePocket"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/MacPaw/OpenAI.git", from: "0.2.9")
+    ],
     targets: [
         .target(
             name: "VoicePocket",
-            dependencies: [],
+            dependencies: [
+                .product(name: "OpenAI", package: "OpenAI")
+            ],
             path: "VoicePocket"
         )
     ]

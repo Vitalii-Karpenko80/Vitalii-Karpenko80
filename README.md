@@ -14,10 +14,12 @@
 
 ### 🎯 Функциональность
 - **Мгновенная запись**: Одна кнопка на Lock Screen или Action Button
-- **Умный парсинг**: Автоматическое извлечение структуры из речи
+- **Гибридный парсинг**: Локальный парсер + опциональный GPT-4
+- **GPT-4 интеграция**: Улучшенное извлечение задач, дат и контекста
 - **Интеграция с Reminders**: Задачи автоматически сохраняются в системные напоминания
 - **Поддержка русского языка**: Распознавание речи настроено на русский
 - **Lock Screen Widget**: Быстрый доступ прямо с экрана блокировки
+- **Приоритеты и типы**: Автоматическое определение приоритета и категории задачи
 
 ### 🎨 Дизайн iOS 2026
 
@@ -125,6 +127,8 @@ swift build
 ✓ Тема: "дверей"  
 ✓ Когда: Завтра, 12:00
 ✓ Контекст: "он обещал цену до 12 часов"
+✓ Приоритет: high 🔴
+✓ Тип: call 📞
 ```
 
 ### Lock Screen Widget
@@ -161,11 +165,13 @@ VoicePocket/
 │
 ├── Services/
 │   ├── SpeechRecognizer.swift    # Speech Recognition API
-│   ├── ThoughtParser.swift       # AI парсер текста
+│   ├── ThoughtParser.swift       # Локальный парсер
+│   ├── GPT4ParsingService.swift  # 🧠 GPT-4 парсер
 │   └── ThoughtManager.swift      # Менеджер данных + EventKit
 │
 ├── Views/
 │   ├── ContentView.swift         # Главный экран
+│   ├── SettingsView.swift        # ⚙️ Настройки и API ключ
 │   └── DesignSystem.swift        # Дизайн-система iOS 2026
 │
 ├── VoicePocketWidget.swift       # Lock Screen Widget
@@ -243,6 +249,7 @@ Font.caption(13)           // Medium Rounded
 
 - **SwiftUI** — Декларативный UI фреймворк
 - **Speech Framework** — Распознавание речи
+- **OpenAI GPT-4o** — Умный парсинг задач
 - **AVFoundation** — Работа с аудио
 - **EventKit** — Интеграция с Reminders и Calendar
 - **WidgetKit** — Lock Screen Widgets

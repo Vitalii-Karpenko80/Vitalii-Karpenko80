@@ -14,6 +14,8 @@ struct Thought: Identifiable, Codable {
     let subject: String?
     let when: Date?
     let context: String?
+    let priority: String?
+    let taskType: String?
     let createdAt: Date
     var isProcessed: Bool
     
@@ -24,6 +26,8 @@ struct Thought: Identifiable, Codable {
         subject: String? = nil,
         when: Date? = nil,
         context: String? = nil,
+        priority: String? = nil,
+        taskType: String? = nil,
         createdAt: Date = Date(),
         isProcessed: Bool = false
     ) {
@@ -33,6 +37,8 @@ struct Thought: Identifiable, Codable {
         self.subject = subject
         self.when = when
         self.context = context
+        self.priority = priority
+        self.taskType = taskType
         self.createdAt = createdAt
         self.isProcessed = isProcessed
     }
@@ -44,5 +50,25 @@ struct Thought: Identifiable, Codable {
         formatter.timeStyle = .short
         formatter.locale = Locale(identifier: "ru_RU")
         return formatter.string(from: when)
+    }
+    
+    var priorityColor: String {
+        switch priority {
+        case "high": return "🔴"
+        case "medium": return "🟡"
+        case "low": return "🟢"
+        default: return ""
+        }
+    }
+    
+    var typeIcon: String {
+        switch taskType {
+        case "call": return "phone.fill"
+        case "meeting": return "person.2.fill"
+        case "purchase": return "cart.fill"
+        case "reminder": return "bell.fill"
+        case "note": return "note.text"
+        default: return "checkmark.circle.fill"
+        }
     }
 }

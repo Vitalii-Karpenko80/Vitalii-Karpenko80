@@ -11,6 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var thoughtManager: ThoughtManager
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @State private var showingTranscription = false
+    @State private var showingSettings = false
     @State private var buttonScale: CGFloat = 1.0
     
     var body: some View {
@@ -36,14 +37,31 @@ struct ContentView: View {
             .navigationTitle("Voice Pocket")
             .navigationBarTitleDisplayMode(.large)
             .toolbarBackground(.hidden, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showingSettings = true
+                    }) {
+                        Image(systemName: "gearshape.fill")
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [.accentPrimary, .accentSecondary],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                    }
+                    .springyButton()
+                }
+            }
             .sheet(isPresented: $showingTranscription) {
                 TranscriptionSheet(
                     transcription: speechRecognizer.transcription,
                     isRecording: speechRecognizer.isRecording,
                     onSave: {
                         if !speechRecognizer.transcription.isEmpty {
-                            withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
-                                thoughtManager.addThought(speechRecognizer.transcription)
+                            Task {
+                                await thoughtManager.addThought(speechRecognizer.transcription)
                             }
                             speechRecognizer.transcription = ""
                             showingTranscription = false
@@ -57,6 +75,10 @@ struct ContentView: View {
                 )
                 .presentationDetents([.large])
                 .presentationCornerRadius(32)
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView()
+                    .environmentObject(thoughtManager)
             }
         }
     }
@@ -224,7 +246,8 @@ struct ThoughtCard: View {
                 VStack(alignment: .leading, spacing: 12) {
                     if let task = thought.task {
                         HStack(spacing: 8) {
-                            Image(systemName: "checkmark.circle.fill")
+                            // Type icon
+                            Image(systemName: thought.typeIcon)
                                 .foregroundStyle(
                                     LinearGradient(
                                         colors: [.green, .green.opacity(0.7)],
@@ -233,9 +256,16 @@ struct ThoughtCard: View {
                                     )
                                 )
                                 .font(.title3)
+                            
                             Text(task)
                                 .font(.body(18))
                                 .foregroundColor(.textPrimary)
+                            
+                            // Priority indicator
+                            if !thought.priorityColor.isEmpty {
+                                Text(thought.priorityColor)
+                                    .font(.caption())
+                            }
                         }
                     }
                     
@@ -286,6 +316,23 @@ struct ThoughtCard: View {
                                 .foregroundColor(.textTertiary)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
+                    }
+                    
+                    // GPT-4 badge если использован
+                    if thoughtManager.useGPT4 && thoughtManager.getGPT4Service().isConfigured {
+                        HStack(spacing: 6) {
+                            Image(systemName: "brain.head.profile")
+                                .font(.caption2)
+                            Text("GPT-4")
+                                .font(.caption(11))
+                        }
+                        .foregroundColor(.accentPrimary)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(
+                            Capsule()
+                                .fill(Color.accentPrimary.opacity(0.15))
+                        )
                     }
                 }
                 
@@ -363,6 +410,7 @@ struct TranscriptionSheet: View {
     let isRecording: Bool
     let onSave: () -> Void
     let onCancel: () -> Void
+    @EnvironmentObject var thoughtManager: ThoughtManager
     
     var body: some View {
         NavigationView {
@@ -416,6 +464,26 @@ struct TranscriptionSheet: View {
                         }
                     }
                     
+                    // Processing indicator
+                    if thoughtManager.isProcessing {
+                        VStack(spacing: 16) {
+                            ProgressView()
+                                .tint(.accentPrimary)
+                                .scaleEffect(1.2)
+                            
+                            HStack(spacing: 8) {
+                                Image(systemName: "brain.head.profile")
+                                    .symbolEffect(.pulse, options: .repeating)
+                                Text("GPT-4 анализирует...")
+                            }
+                            .font(.caption())
+                            .foregroundColor(.textSecondary)
+                        }
+                        .padding(20)
+                        .liquidGlassCard(tintColor: .glassTint, cornerRadius: 16)
+                        .transition(.scale.combined(with: .opacity))
+                    }
+                    
                     ScrollView {
                         Text(transcription.isEmpty ? "Начните говорить..." : transcription)
                             .font(.title3)
@@ -445,6 +513,7 @@ struct TranscriptionSheet: View {
                     }
                     .foregroundColor(.textSecondary)
                     .springyButton()
+                    .disabled(thoughtManager.isProcessing)
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -453,7 +522,7 @@ struct TranscriptionSheet: View {
                     }
                     .foregroundColor(.accentPrimary)
                     .fontWeight(.semibold)
-                    .disabled(transcription.isEmpty)
+                    .disabled(transcription.isEmpty || thoughtManager.isProcessing)
                     .springyButton()
                 }
             }
