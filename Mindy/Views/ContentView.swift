@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var showingTranscription = false
     @State private var showingSettings = false
     @State private var showingExport = false
+    @State private var showingAnalytics = false
     @State private var buttonScale: CGFloat = 1.0
     
     var body: some View {
@@ -40,19 +41,35 @@ struct ContentView: View {
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        showingExport = true
-                    }) {
-                        Image(systemName: "square.and.arrow.up")
-                            .foregroundStyle(
-                                LinearGradient(
-                                    colors: [.accentPrimary, .accentSecondary],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
+                    HStack(spacing: 12) {
+                        Button(action: {
+                            showingExport = true
+                        }) {
+                            Image(systemName: "square.and.arrow.up")
+                                .foregroundStyle(
+                                    LinearGradient(
+                                        colors: [.accentPrimary, .accentSecondary],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
                                 )
-                            )
+                        }
+                        .springyButton()
+                        
+                        Button(action: {
+                            showingAnalytics = true
+                        }) {
+                            Image(systemName: "chart.bar.fill")
+                                .foregroundStyle(
+                                    LinearGradient(
+                                        colors: [.accentPrimary, .accentSecondary],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
+                                )
+                        }
+                        .springyButton()
                     }
-                    .springyButton()
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -99,6 +116,10 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showingExport) {
                 ExportView()
+                    .environmentObject(thoughtManager)
+            }
+            .sheet(isPresented: $showingAnalytics) {
+                AnalyticsView()
                     .environmentObject(thoughtManager)
             }
         }

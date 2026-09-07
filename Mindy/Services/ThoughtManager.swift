@@ -18,6 +18,8 @@ class ThoughtManager: ObservableObject {
     private let parser = ThoughtParser()
     private let gpt4Service = GPT4ParsingService()
     private let eventStore = EKEventStore()
+    private let cloudSync = CloudSyncService()
+    private let calendarService = CalendarIntegrationService()
     private let userDefaults = UserDefaults.standard
     private let thoughtsKey = "saved_thoughts"
     private let useGPT4Key = "use_gpt4_parsing"
@@ -71,8 +73,16 @@ class ThoughtManager: ObservableObject {
         thoughts.insert(thought, at: 0)
         saveThoughts()
         
-        if let task = thought.task {
-            createReminder(title: task, dueDate: thought.when, notes: thought.context)
+        // Smart Calendar Integration
+        await calendarService.smartIntegrate(thought: thought)
+        
+        // CloudKit Sync
+        if cloudSync.syncEnabled {
+            do {
+                try await cloudSync.uploadThought(thought)
+            } catch {
+                print("⚠️ CloudKit sync failed: \(error.localizedDescription)")
+            }
         }
         
         isProcessing = false
@@ -85,6 +95,17 @@ class ThoughtManager: ObservableObject {
     func deleteThought(_ thought: Thought) {
         thoughts.removeAll { $0.id == thought.id }
         saveThoughts()
+        
+        // Delete from CloudKit
+        if cloudSync.syncEnabled {
+            Task {
+                do {
+                    try await cloudSync.deleteThought(thought)
+                } catch {
+                    print("⚠️ CloudKit delete failed: \(error.localizedDescription)")
+                }
+            }
+        }
     }
     
     func markAsProcessed(_ thought: Thought) {
