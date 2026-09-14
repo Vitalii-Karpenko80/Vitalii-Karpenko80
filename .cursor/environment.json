@@ -8,5 +8,18 @@
     "github.com/Vitalii-Karpenko80/Mindy",
     "github.com/Vitalii-Karpenko80/UkraineEstimates",
     "github.com/Vitalii-Karpenko80/StoryMe"
+  ],
+  "ports": [
+    {
+      "name": "static site",
+      "port": 8000
+    }
+  ],
+  "terminals": [
+    {
+      "name": "web",
+      "command": "python3 -m http.server 8000 --bind 0.0.0.0",
+      "description": "Serves the static site (index.html) at http://localhost:8000"
+    }
   ]
 }
