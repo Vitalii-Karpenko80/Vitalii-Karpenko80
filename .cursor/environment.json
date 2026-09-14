@@ -1,6 +1,12 @@
 {
   "name": "Vitalii-Karpenko80 profile",
   "repositoryDependencies": [
-    "github.com/Vitalii-Karpenko80/privacy-policy"
+    "github.com/Vitalii-Karpenko80/privacy-policy",
+    "github.com/Vitalii-Karpenko80/FieldReport",
+    "github.com/Vitalii-Karpenko80/MindSpaceUA",
+    "github.com/Vitalii-Karpenko80/Unwalked",
+    "github.com/Vitalii-Karpenko80/Mindy",
+    "github.com/Vitalii-Karpenko80/UkraineEstimates",
+    "github.com/Vitalii-Karpenko80/StoryMe"
   ]
 }
